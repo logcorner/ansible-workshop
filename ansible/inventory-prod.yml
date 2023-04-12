@@ -3,7 +3,7 @@ all:
   children:
     web-servers:
       hosts:
-        13.94.188.242
+        20.229.80.84
       vars:
-        ansible_user: flanders
+        ansible_user: logcorner
         ansible_ssh_pass: '{{ prod_ssh_password }}'
