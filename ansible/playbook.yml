@@ -4,15 +4,15 @@
   # The approach in this playbook is shared on numerous locations online, it is impossible to find the original source
   # One source is: https://serverfault.com/questions/132970/can-i-automatically-add-a-new-host-to-known-hosts
   hosts: all
-  gather_facts: false
+  gather_facts: no
   connection: local
   tasks:
-    - name: Ensure .ssh directory exists
+    - name: ensure .ssh directory exists
       file:
         path: ~/.ssh
         mode: 0700
         state: directory
-    - name: Ensure known_hosts file exists
+    - name: ensure known_hosts file exists
       copy:
         content: ""
         dest: ~/.ssh/known_hosts
@@ -23,14 +23,14 @@
       failed_when: keygen.stderr != ''
       changed_when: false
 
-    - name: Fetch remote ssh key
+    - name: fetch remote ssh key
       command: ssh-keyscan -T5 {{ inventory_hostname }}
       register: keyscan
       failed_when: keyscan.rc != 0 or keyscan.stdout == ''
       changed_when: false
       when: keygen.rc == 1
 
-    - name: Add ssh-key to local known_hosts
+    - name: add ssh-key to local known_hosts
       lineinfile:
         name: ~/.ssh/known_hosts
         create: yes

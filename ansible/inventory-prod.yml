@@ -1,0 +1,9 @@
+---
+all:
+  children:
+    web-servers:
+      hosts:
+        13.94.188.242
+      vars:
+        ansible_user: flanders
+        ansible_ssh_pass: '{{ prod_ssh_password }}'
