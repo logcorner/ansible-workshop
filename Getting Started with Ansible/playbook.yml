@@ -4,7 +4,7 @@
 - name: Ensure ~/.gitconfig copied from master.gitconfig
   hosts: localhost
   tasks:
-  - copy: src="../adhoc/master.gitconfig" dest="~/.gitconfig" 
+  - copy: src="adhoc/master.gitconfig" dest="~/.gitconfig" 
 
 - name: Ensure homebrew packages are installed.
   hosts: localhost
