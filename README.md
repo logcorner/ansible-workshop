@@ -7,3 +7,5 @@ https://github.com/g0t4/course-ansible-getting-started
 git config --global user.name "logcorner"
 git config --global user.email "tocane.technologies@gmail.com"
 git config --global --list
+
+ansible-playbook playbook.yml 
