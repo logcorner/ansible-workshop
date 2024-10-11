@@ -9,3 +9,13 @@ git config --global user.email "tocane.technologies@gmail.com"
 git config --global --list
 
 ansible-playbook playbook.yml 
+ansible-playbook playbook.yml  -vvv
+
+ansible-doc copy
+
+
+ansible-inventory --list
+
+
+
+cd sources/repos/ansible-workshop/'Getting Started with Ansible'

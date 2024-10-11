@@ -1,0 +1,11 @@
+---
+
+- name: Ensure git installed
+  hosts: localhost 
+  tags: [ 'install-git' ]
+  tasks: 
+  - package: name=git state=latest
+    #when: ansible_os_family == 'RedHat' # conditional task
+    become: yes # https://docs.ansible.com/ansible/latest/user_guide/become.html
+  # Note: since we have a group of centos hosts we don't really need the when condition but it is here to demo conditional tasks and in the event we have a mistake or a group that contains a host that isn't a RHEL derivative 
+
