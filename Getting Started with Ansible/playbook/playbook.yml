@@ -10,6 +10,16 @@
 - name: Ensure ~/.gitconfig copied from master.gitconfig
   hosts: ubuntu_nodes
   tasks:
-    - copy:
+    - name: Copy the master.gitconfig to ~/.gitconfig
+      copy:
         src: "~/sources/repos/ansible-workshop/Getting Started with Ansible/adhoc/master.gitconfig"
         dest: "/home/logcorner/.gitconfig"
+      become: no
+
+    - name: Verify if .gitconfig exists
+      command: ls -la /home/logcorner/.gitconfig
+      register: gitconfig_file
+
+    - name: Debug the file copy result
+      debug:
+        var: gitconfig_file
