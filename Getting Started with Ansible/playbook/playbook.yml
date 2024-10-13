@@ -12,4 +12,4 @@
   tasks:
     - copy:
         src: "~/sources/repos/ansible-workshop/Getting Started with Ansible/adhoc/master.gitconfig"
-        dest: "~/.gitconfig"
+        dest: "/home/logcorner/.gitconfig"
