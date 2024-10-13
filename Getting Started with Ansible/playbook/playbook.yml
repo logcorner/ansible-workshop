@@ -1,8 +1,15 @@
 - name: Ensure git is installed
   hosts: ubuntu_nodes
-  tags: [ 'install-git' ]
+  tags: ['install-git']
   tasks:
     - package:
         name: git
         state: latest
       become: yes
+
+- name: Ensure ~/.gitconfig copied from master.gitconfig
+  hosts: ubuntu_nodes
+  tasks:
+    - copy:
+        src: "~/sources/repos/ansible-workshop/Getting Started with Ansible/adhoc/master.gitconfig"
+        dest: "~/.gitconfig"
