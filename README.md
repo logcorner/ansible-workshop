@@ -19,3 +19,10 @@ ansible-inventory --list
 
 
 cd sources/repos/ansible-workshop/'Getting Started with Ansible'
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub logcorner@20.82.123.107
+
+
+ssh -i ~/.ssh/id_rsa.pem logcorner@20.82.123.107
+
+ansible -i ~/my_inventory.ini -m ping ubuntu_nodes

@@ -1,0 +1,8 @@
+- name: Ensure git is installed
+  hosts: ubuntu_nodes
+  tags: [ 'install-git' ]
+  tasks:
+    - package:
+        name: git
+        state: latest
+      become: yes
