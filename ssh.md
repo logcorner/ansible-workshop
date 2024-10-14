@@ -24,11 +24,22 @@ Step 2: Copy the Public Key to VM-UBUNTU-001
 Copy the public key to the target VM (VM-UBUNTU-001):
 Use the ssh-copy-id command to copy your public key from VM-UBUNTU-ANSIBLE to VM-UBUNTU-001:
 
-ssh-copy-id logcorner@20.224.65.3  #VM-UBUNTU-ANSIBLE
+
 
 ssh-copy-id logcorner@20.82.123.107  #VM-CENTOS-001
+
+ssh-copy-id logcorner@20.224.65.3   #VM-UBUNTU-001
 
 ssh-copy-id logcorner@20.224.69.120  #VM-UBUNTU-002
 
 If prompted to accept the host's fingerprint:
 Type yes and enter the password for logcorner on VM-UBUNTU-001 when prompted.
+
+
+ssh logcorner@20.224.65.3
+
+ssh logcorner@20.224.69.120
+
+ssh logcorner@20.82.123.107
+
+20.224.65.3 ansible_user=logcorner
