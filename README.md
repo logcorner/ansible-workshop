@@ -34,3 +34,7 @@ ansible-playbook -i custom_inventory.ini playbook.yml
 
 
 ansible-inventory --list
+
+
+
+chmod +x script.sh
