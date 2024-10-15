@@ -30,3 +30,7 @@ ansible -i ~/my_inventory.ini -m ping ubuntu_nodes
 
 ansible-playbook -i custom_inventory.ini playbook.yml
 
+# INVENTORY
+
+
+ansible-inventory --list
